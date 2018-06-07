@@ -27,7 +27,7 @@ if (!Configure::read('debug')) :
     );
 endif;
 
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
+$cakeDescription = 'CIART-DC: A arte como agente transformador';
 ?>
 <!DOCTYPE html>
 <html>
