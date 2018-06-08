@@ -68,7 +68,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', 'trocando o salt, para obtermáximaseguran ça'),
+        'salt' => env('SECURITY_SALT', 'trocando o salt, para obtermáximaseguran ça 2018p ra ser @!@#'),
     ],
 
     /**
