@@ -9,8 +9,12 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $title
  * @property string $body
+ * @property int $category_id
+ * @property int $user_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ *
+ * @property \App\Model\Entity\Category $category
  */
 class Article extends Entity
 {
@@ -27,7 +31,10 @@ class Article extends Entity
     protected $_accessible = [
         'title' => true,
         'body' => true,
+        'category_id' => true,
+        'user_id' => true,
         'created' => true,
-        'modified' => true
+        'modified' => true,
+        'category' => true
     ];
 }

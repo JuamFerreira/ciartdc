@@ -20,6 +20,9 @@ class ArticlesController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Categories']
+        ];
         $articles = $this->paginate($this->Articles);
 
         $this->set(compact('articles'));
@@ -35,7 +38,7 @@ class ArticlesController extends AppController
     public function view($id = null)
     {
         $article = $this->Articles->get($id, [
-            'contain' => []
+            'contain' => ['Categories']
         ]);
 
         $this->set('article', $article);
@@ -58,7 +61,8 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $this->set(compact('article'));
+        $categories = $this->Articles->Categories->find('list', ['limit' => 200]);
+        $this->set(compact('article', 'categories'));
     }
 
     /**
@@ -82,7 +86,8 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('The article could not be saved. Please, try again.'));
         }
-        $this->set(compact('article'));
+        $categories = $this->Articles->Categories->find('list', ['limit' => 200]);
+        $this->set(compact('article', 'categories'));
     }
 
     /**

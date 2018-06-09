@@ -14,6 +14,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Articles'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Categories'), ['controller' => 'Categories', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Category'), ['controller' => 'Categories', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="articles form large-9 medium-8 columns content">
@@ -23,6 +25,8 @@
         <?php
             echo $this->Form->control('title');
             echo $this->Form->control('body');
+            echo $this->Form->control('category_id', ['options' => $categories]);
+            echo $this->Form->control('user_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
