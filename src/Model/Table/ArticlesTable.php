@@ -42,6 +42,7 @@ class ArticlesTable extends Table
 
         $this->addBehavior('Timestamp');
 
+//		Basta adicionar a relação belongsTo com Categories e Users
         $this->belongsTo('Categories', [
             'foreignKey' => 'category_id',
             'joinType' => 'INNER'
